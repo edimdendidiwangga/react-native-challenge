@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Image } from 'react-native';
-import { Container, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body } from 'native-base';
+import { Container, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Header, Item, Input, Button } from 'native-base';
 export default class App extends Component {
   constructor(props){
 		super(props)
@@ -33,8 +33,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Container>
-          <View>
+      <Container style={{padding: 20}}>
               <DeckSwiper
                   dataSource={this.state.data}
                   renderItem={item =>
@@ -50,18 +49,20 @@ export default class App extends Component {
                         </CardItem>
                         <CardItem cardBody>
                           <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                            <Image style={{width: 200, height: 150 }} source={{ uri: item.urlToImage}} />
+                            <Image style={{width: 200, height: 150 }} source={{ uri: item.urlToImage }} />
                           </View>
                         </CardItem>
                         <CardItem>
-                            <Icon name="heart" style={{ color: '#ED4A6A' }} />
+                            <Icon name="home" style={{ color: '#ED4A6A' }} />
                             <Text>{item.author}</Text>
                         </CardItem>
                     </Card>
                   }
               />
-          </View>
+
+
       </Container>
+
     );
   }
 }

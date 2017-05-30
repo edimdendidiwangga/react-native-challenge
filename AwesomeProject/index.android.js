@@ -1,9 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+import { Container, Header, Item, Input, Icon, Button } from 'native-base';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,15 +6,22 @@ import {
   Text,
   View
 } from 'react-native';
-import { Container } from 'native-base';
 import App from './src/App.js'
 
 export default class AwesomeProject extends Component {
-
-
   render() {
     return (
-      <Container>
+      <Container >
+            <Header searchBar rounded style={{ backgroundColor: 'green'}}>
+                <Item>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Search" />
+                    <Icon name="ios-people" />
+                </Item>
+                <Button transparent>
+                    <Text>Search</Text>
+                </Button>
+            </Header>
         <App />
       </Container>
     );
@@ -29,7 +31,7 @@ export default class AwesomeProject extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
+    padding: 40,
     backgroundColor: '#F5FCFF',
   },
   welcome: {
