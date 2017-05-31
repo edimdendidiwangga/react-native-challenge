@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
 export default class Footers extends Component {
   render() {
     return (
       <Footer >
         <FooterTab>
-          <Button vertical>
+          <Button vertical onPress={Actions.pageArticleSwipper}>
               <Icon name="apps" />
-              <Text>Apps</Text>
+              <Text >Swip</Text>
           </Button>
           <Button vertical>
               <Icon name="camera" />
@@ -18,9 +19,9 @@ export default class Footers extends Component {
               <Icon active name="navigate" />
               <Text>Navigate</Text>
           </Button>
-          <Button vertical>
+          <Button vertical onPress={Actions.pageListAuthor}>
               <Icon name="person" />
-              <Text>Author</Text>
+              <Text >Author</Text>
           </Button>
         </FooterTab>
       </Footer>
