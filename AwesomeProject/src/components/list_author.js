@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import { Actions } from 'react-native-router-flux';
 import { Container, Content, List, ListItem, Thumbnail, Text, Body, Left, Right } from 'native-base';
+import { fetchArticles } from '../actions/Action'
+import { connect } from 'react-redux'
 
-export default class ListAuthor extends Component {
+class ListAuthor extends Component {
   constructor(props){
 		super(props)
 		this.state = {
@@ -10,24 +12,15 @@ export default class ListAuthor extends Component {
 		}
 	}
 
-  componentWillMount(){
-		let self = this
-		axios.get('https://newsapi.org/v1/articles?source=techcrunch&apiKey=8f3ef4123b884857b17e951ae16e4142')
-	  .then(function (response) {
-	    self.setState({
-				data : response.data.articles
-			})
-	  })
-	  .catch(function (error) {
-	    console.log(error);
-	  });
+  componentDidMount() {
+		this.props.fetchArticles()
 	}
 
   render() {
     return (
       <Container style={{paddingTop: 55}}>
         <Content>
-        {this.state.data.map((item, index) =>
+        {this.props.articles.data.map((item, index) =>
            (
             <ListItem avatar key={index}>
               <Left>
@@ -47,3 +40,13 @@ export default class ListAuthor extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+	articles: state // tadinya array , sekarang menjadi object {data, loading}
+})
+const mapDispatchToProps = dispatch => ({
+	fetchArticles : () => dispatch(fetchArticles()),
+
+})
+// export default PasswordForm
+export default connect(mapStateToProps, mapDispatchToProps)(ListAuthor)

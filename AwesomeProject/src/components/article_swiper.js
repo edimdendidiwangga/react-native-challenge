@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import { connect } from 'react-redux'
 import { Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Container, Content, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Header, Item, Input, Button } from 'native-base';
+import { fetchArticles } from '../actions/Action'
 
-export default class ListAuthor extends Component {
+class ArticleSwipper extends Component {
   constructor(props){
 		super(props)
 		this.state = {
@@ -20,17 +21,8 @@ export default class ListAuthor extends Component {
 		}
 	}
 
-  componentWillMount(){
-		let self = this
-		axios.get('https://newsapi.org/v1/articles?source=techcrunch&apiKey=8f3ef4123b884857b17e951ae16e4142')
-	  .then(function (response) {
-	    self.setState({
-				data : response.data.articles
-			})
-	  })
-	  .catch(function (error) {
-	    console.log(error);
-	  });
+  componentDidMount() {
+		this.props.fetchArticles()
 	}
 
   handleOnPress(item){
@@ -38,10 +30,13 @@ export default class ListAuthor extends Component {
   }
 
   render() {
+    if(this.props.articles.data.length == 0){
+      return (<Text>Loading ....</Text>);
+    }else{
     return (
       <Container style={{paddingTop: 70, paddingLeft: 20, paddingRight: 20}}>
         <DeckSwiper
-          dataSource={this.state.data}
+          dataSource={this.props.articles.data}
           renderItem={item =>
             <Card style={{ elevation: 3 }}>
               <CardItem>
@@ -69,4 +64,15 @@ export default class ListAuthor extends Component {
       </Container>
     );
   }
+  }
 }
+
+const mapStateToProps = state => ({
+	articles: state // tadinya array , sekarang menjadi object {data, loading}
+})
+const mapDispatchToProps = dispatch => ({
+	fetchArticles : () => dispatch(fetchArticles()),
+
+})
+// export default PasswordForm
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleSwipper)
