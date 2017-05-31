@@ -24,7 +24,7 @@ export const fetchPassword = () => {
 					type: 'FETCH_PASSWORD',
 					payload: response.data
 				})
-			
+
 
 		})
 		.catch(error => {
@@ -64,4 +64,11 @@ export const editPassword = data => {
 		.catch(error => {
 			console.log(error)
 		})
+}
+
+export const getById = data => {
+	return dispatch({ // next
+		type: 'GET_BY_ID',
+		payload: data
+	})
 }

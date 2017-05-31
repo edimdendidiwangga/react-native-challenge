@@ -24,7 +24,16 @@ const editPassword = (state, updated) => {
 	return newState
 }
 
-const deletePassword = (state, id) => {
+const getById = (state, title) => {
+	let newData = state.data.filter(data => data.title == title)
+	let newState = {
+	 	...state,
+		data: newData
+  }
+	return newState
+}
+
+const deletePassword = (state, data) => {
 	let newData = state.data.filter(data => data.id != id)
 	let newState = {
 	 	...state,
@@ -38,6 +47,7 @@ const passwordReducer = (state = initialState, { type, payload }) => {
 		case 'FETCH_PASSWORD': return fetchPassword(state, payload)
 		case 'ADD_PASSWORD': return addPassword(state, payload)
 		case 'EDIT_PASSWORD': return editPassword(state, payload)
+		case 'GET_BY_ID': return getById(state, payload)
 		case 'DELETE_PASSWORD': return deletePassword(state, payload)
 			break;
 		default: return state

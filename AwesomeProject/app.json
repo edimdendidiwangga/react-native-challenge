@@ -1,4 +1,9 @@
 {
   "name": "AwesomeProject",
-  "displayName": "AwesomeProject"
+  "displayName": "AwesomeProject",
+  "expo": {
+    "loading": {
+      "backgroundColor": "red"
+    }
+  }
 }

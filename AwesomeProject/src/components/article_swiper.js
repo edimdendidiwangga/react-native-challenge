@@ -33,9 +33,13 @@ export default class ListAuthor extends Component {
 	  });
 	}
 
+  handleOnPress(item){
+    Actions.pageOnArticle({ card : item })
+  }
+
   render() {
     return (
-      <Container style={{paddingTop: 50, paddingLeft: 20, paddingRight: 20}}>
+      <Container style={{paddingTop: 70, paddingLeft: 20, paddingRight: 20}}>
         <DeckSwiper
           dataSource={this.state.data}
           renderItem={item =>
@@ -44,7 +48,7 @@ export default class ListAuthor extends Component {
                 <Left>
                   <Thumbnail source={{uri: item.urlToImage}} />
                   <Body>
-                    <Text>{item.title}</Text>
+                    <Text onPress={()=> this.handleOnPress(item)}>{item.title}</Text>
                     <Text note>{item.publishedAt}</Text>
                   </Body>
                 </Left>
