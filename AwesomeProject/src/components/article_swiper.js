@@ -2,22 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Container, Content, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Header, Item, Input, Button } from 'native-base';
+import { Container, Content, Spinner, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Header, Item, Input, Button } from 'native-base';
 import { fetchArticles } from '../actions/Action'
 
 class ArticleSwipper extends Component {
   constructor(props){
 		super(props)
 		this.state = {
-			data: [
-        {
-          title : 'go',
-          author : 'edim',
-          description : 'bla',
-          publishedAt : '1992-09-26',
-          urlToImage : 'https://daveti.files.wordpress.com/2012/10/jop.jpg'
-        }
-      ]
+			data: []
 		}
 	}
 
@@ -31,7 +23,7 @@ class ArticleSwipper extends Component {
 
   render() {
     if(this.props.articles.data.length == 0){
-      return (<Text>Loading ....</Text>);
+      return (<Content style={{paddingTop: 70}}><Spinner color='green' /></Content>);
     }else{
     return (
       <Container style={{paddingTop: 70, paddingLeft: 20, paddingRight: 20}}>

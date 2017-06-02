@@ -21,18 +21,17 @@ export default class App extends Component {
   }
 }
 
-
 const styles = {
   navBar: {
     backgroundColor:'#0D47A1',
   },
   navBarTitle:{
-      color:'#FFFFFF'
+    color:'#FFFFFF'
   },
   barButtonTextStyle:{
-      color:'#FFFFFF'
+    color:'#FFFFFF'
   },
   barButtonIconStyle:{
-      tintColor:'rgb(255,255,255)'
+    tintColor:'rgb(255,255,255)'
   }
 }

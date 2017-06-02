@@ -8,20 +8,20 @@ export default class Footers extends Component {
       <Footer >
         <FooterTab>
           <Button vertical onPress={Actions.pageArticleSwipper}>
-              <Icon name="apps" />
-              <Text >Swip</Text>
+            <Icon name="apps" />
+            <Text >Swip</Text>
           </Button>
           <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
+            <Icon name="camera" />
+            <Text>Camera</Text>
           </Button>
           <Button active vertical>
-              <Icon active name="navigate" />
-              <Text>Navigate</Text>
+            <Icon active name="navigate" />
+            <Text>Navigate</Text>
           </Button>
           <Button vertical onPress={Actions.pageListAuthor}>
-              <Icon name="person" />
-              <Text >Author</Text>
+            <Icon name="person" />
+            <Text >Author</Text>
           </Button>
         </FooterTab>
       </Footer>

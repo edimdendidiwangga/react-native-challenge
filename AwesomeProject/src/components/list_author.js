@@ -24,14 +24,14 @@ class ListAuthor extends Component {
            (
             <ListItem avatar key={index}>
               <Left>
-                  <Thumbnail source={{uri: item.urlToImage}} />
+                <Thumbnail source={{uri: item.urlToImage}} />
               </Left>
               <Body>
-                  <Text>{item.author}</Text>
-                  <Text note>Hacker News</Text>
+                <Text>{item.author}</Text>
+                <Text note>Hacker News</Text>
               </Body>
               <Right>
-                  <Text note>3:43 pm</Text>
+                <Text note>3:43 pm</Text>
               </Right>
             </ListItem>
           ))}
