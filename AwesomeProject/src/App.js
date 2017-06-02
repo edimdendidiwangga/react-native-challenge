@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Container } from 'native-base';
+import { Container, navBar } from 'native-base';
 import { Router, Scene } from 'react-native-router-flux';
 import ArticleSwipper from './components/article_swiper'
 import ListAuthor from './components/list_author'
 import OnArticle from './components/OnArticle'
+import Signin from './components/signin'
 
 export default class App extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends Component {
             <Scene key="pageArticleSwipper" component={ArticleSwipper} title="Article Swipper" initial={true} />
             <Scene key="pageListAuthor" component={ListAuthor} title="List Author" />
             <Scene key="pageOnArticle" component={OnArticle} title="One Article" />
+            <Scene key="pageSignin" component={Signin} title="Sign In" />
           </Scene>
         </Router>
       </Container>

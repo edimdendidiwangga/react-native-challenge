@@ -25,7 +25,7 @@ export default class OnArticle extends Component {
               <Body style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
                 <Image style={{width: 200, height: 150 }} source={{ uri : this.props.card.urlToImage}} />
                 <Text>
-                    { this.props.card.description }
+                  { this.props.card.description }
                 </Text>
                 <Button transparent textStyle={{color: '#87838B'}}>
                   <Icon name="person" />

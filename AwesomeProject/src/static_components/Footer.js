@@ -15,12 +15,13 @@ export default class Footers extends Component {
             <Icon name="camera" />
             <Text>Camera</Text>
           </Button>
-          <Button active vertical>
-            <Icon active name="navigate" />
-            <Text>Navigate</Text>
+          <Button active vertical onPress={Actions.pageSignin}>
+            <Icon active name="person" />
+            <Text>Sign In</Text>
           </Button>
+
           <Button vertical onPress={Actions.pageListAuthor}>
-            <Icon name="person" />
+            <Icon name="ios-people" />
             <Text >Author</Text>
           </Button>
         </FooterTab>

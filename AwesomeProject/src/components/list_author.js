@@ -3,6 +3,7 @@ import { Actions } from 'react-native-router-flux';
 import { Container, Content, List, ListItem, Thumbnail, Text, Body, Left, Right } from 'native-base';
 import { fetchArticles } from '../actions/Action'
 import { connect } from 'react-redux'
+import SearchAuthor from './searchAuthor'
 
 class ListAuthor extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ class ListAuthor extends Component {
   render() {
     return (
       <Container style={{paddingTop: 55}}>
+        <SearchAuthor />
         <Content>
         {this.props.articles.data.map((item, index) =>
            (

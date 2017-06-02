@@ -20,12 +20,12 @@ export default class AwesomeProject extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 40,
-    backgroundColor: '#F5FCFF',
-  }
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 40,
+//     backgroundColor: '#F5FCFF',
+//   }
+// });
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
