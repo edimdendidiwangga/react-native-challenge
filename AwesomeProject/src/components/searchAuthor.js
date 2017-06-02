@@ -11,7 +11,7 @@ class SearchAuthor extends Component {
       <Header searchBar rounded>
         <Item>
           <Icon name="ios-search" />
-          <Input placeholder="Search" />
+          <Input placeholder="Search" name="search" onChangeText={this.props.handleSearchChange}/>
           <Icon name="ios-people" />
         </Item>
         <Button transparent>

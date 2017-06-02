@@ -6,13 +6,7 @@ import { Container, Content, Spinner, Icon, View, DeckSwiper, Card, CardItem, Th
 import { fetchArticles } from '../actions/Action'
 
 class ArticleSwipper extends Component {
-  constructor(props){
-		super(props)
-		this.state = {
-			data: []
-		}
-	}
-
+  
   componentDidMount() {
 		this.props.fetchArticles()
 	}

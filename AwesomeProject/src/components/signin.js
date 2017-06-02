@@ -13,12 +13,12 @@ class Signin extends Component {
         <Content>
           <Form>
             <Item stackedLabel>
-                <Label>Username</Label>
-                <Input />
+              <Label>Username</Label>
+              <Input />
             </Item>
             <Item stackedLabel last>
-                <Label>Password</Label>
-                <Input />
+              <Label>Password</Label>
+              <Input />
             </Item>
             <View style={{paddingTop: 20}}>
             <Button textStyle={{color: '#87838B'}} >
